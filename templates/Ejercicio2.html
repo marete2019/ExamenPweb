@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+     <link rel="stylesheet" type="text/css" href="/static/css/estilosejercicios.css">
+</head>
+<body>
+   <h1>Inicio de sesión</h1>
+
+<form method="POST">
+  <label>ingresa tu nombre:</label>
+  <input type="text" name="usuario">
+
+  <label>ingresa tu contraseña :</label>
+  <input type="password" name="password">
+
+  <button type="submit">Ingresar</button>
+</form>
+
+{% if usuario == "juan" and password == "admin" %}
+   <p>Bienvenido administrador {{ usuario }}</p>
+
+{% elif usuario == "pepe" and password == "user" %}
+   <p>Bienvenido usuario {{ usuario }}</p>
+
+{% elif usuario != "" and password != "" %}
+   <p>Usuario o contraseña incorrectos</p>
+
+{% endif %}
+</body>
+</html>
